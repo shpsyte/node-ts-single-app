@@ -1,0 +1,7 @@
+
+@baseUrl = http://localhost:3333
+
+### Test
+GET {{ baseUrl }}/
+Content-Type: application/json
+ 
