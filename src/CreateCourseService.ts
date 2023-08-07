@@ -1,18 +1,13 @@
-
-  
 type Course = {
   name: string;
   duration?: number;
   educator: string;
-}
-
+};
 
 class CreateCourseService {
-
   execute({ duration, educator, name }: Course) {
-    console.log({ name, duration, educator});
+    console.log({ name, duration, educator });
   }
 }
 
-  
-export default CreateCourseService
+export default CreateCourseService;
