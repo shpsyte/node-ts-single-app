@@ -6,10 +6,8 @@ class Category {
   description: string;
   created_at: Date;
 
-  constructor() {
-    if (!this.id) {
-      this.id = randomUUID();
-    }
+  constructor(id = randomUUID()) {
+    this.id = id;
     this.name = '';
     this.description = '';
     this.created_at = new Date();
