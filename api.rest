@@ -1,7 +1,23 @@
 
 @baseUrl = http://localhost:3333
 
-### Test
-GET {{ baseUrl }}/
+### Add a category
+POST {{ baseUrl }}/categories
 Content-Type: application/json
+
+{
+  "name": "Category name",
+  "description": "Category description"
+}
+ 
+
+### List all category
+GET {{ baseUrl }}/categories
+Content-Type: application/json
+
+ 
+
+
+### Add a product
+  
  
