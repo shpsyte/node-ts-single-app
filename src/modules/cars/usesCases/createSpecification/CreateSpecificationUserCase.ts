@@ -1,9 +1,9 @@
 import {
   ISpecificationRepository,
   SpecificationDTO,
-} from '../repositories/ISpecificationRepository';
+} from '../../repositories/ISpecificationRepository';
 
-class CreateSpecificationServices {
+class CreateSpecificationUserCase {
   constructor(private specificationRepository: ISpecificationRepository) {
     this.specificationRepository = specificationRepository;
   }
@@ -21,4 +21,4 @@ class CreateSpecificationServices {
   }
 }
 
-export { CreateSpecificationServices };
+export { CreateSpecificationUserCase };

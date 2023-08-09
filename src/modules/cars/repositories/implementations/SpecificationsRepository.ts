@@ -1,8 +1,8 @@
-import { Specification } from '../model/Specification';
+import { Specification } from '../../model/Specification';
 import {
   ISpecificationRepository,
   SpecificationDTO,
-} from './ISpecificationRepository';
+} from '../ISpecificationRepository';
 
 let instance: SpecificationRepository;
 class SpecificationRepository implements ISpecificationRepository {
