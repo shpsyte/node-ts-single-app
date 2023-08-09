@@ -17,7 +17,16 @@ Content-Type: application/json
 
  
 
+### Add a specficitaion
+POST {{ baseUrl }}/specification
+Content-Type: application/json
 
-### Add a product
-  
+{
+  "name": "Spec name s",
+  "description": "Spec description"
+}
  
+
+### List all specficitaion
+GET {{ baseUrl }}/specification
+Content-Type: application/json
