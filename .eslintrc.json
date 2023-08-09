@@ -19,6 +19,17 @@
   "rules": {
     "camelcase": "off",
     "import/no-unresolved": "error",
+    "no-use-before-define": [
+      "error",
+      {
+        "variables": false,
+        "functions": false,
+        "classes": false,
+        "enums": false,
+        "typedefs": false,
+        "ignoreTypeReferences": false
+      }
+    ],
     "@typescript-eslint/naming-convention": [
       "error",
       {

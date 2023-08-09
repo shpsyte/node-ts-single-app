@@ -4,10 +4,16 @@ import {
   CreateCategoryDTO,
 } from './ICategoriesRepository';
 
+let instance: CategoryRepository;
+
 class CategoryRepository implements ICategoriesRepository {
   private catergories: Category[] = [];
 
   constructor() {
+    if (instance) {
+      return instance;
+    }
+    instance = this;
     this.catergories = [];
   }
 
@@ -38,4 +44,6 @@ class CategoryRepository implements ICategoriesRepository {
   }
 }
 
-export { CategoryRepository };
+const categoryRepository = Object.freeze(new CategoryRepository());
+
+export default categoryRepository;

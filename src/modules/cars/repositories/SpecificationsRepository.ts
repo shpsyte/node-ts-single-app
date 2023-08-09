@@ -4,10 +4,15 @@ import {
   SpecificationDTO,
 } from './ISpecificationRepository';
 
+let instance: SpecificationRepository;
 class SpecificationRepository implements ISpecificationRepository {
-  private specifications: Specification[];
+  private specifications: Specification[] = [];
 
   constructor() {
+    if (instance) {
+      return instance;
+    }
+    instance = this;
     this.specifications = [];
   }
 
@@ -35,4 +40,6 @@ class SpecificationRepository implements ISpecificationRepository {
   }
 }
 
-export { SpecificationRepository };
+const specificationRepository = Object.freeze(new SpecificationRepository());
+
+export default specificationRepository;
