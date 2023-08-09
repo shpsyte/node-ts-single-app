@@ -1,5 +1,5 @@
 import { Category } from '../model/Category';
-import { CategoryRepository } from '../repositories/CategoriesRepository';
+import { ICategoriesRepository } from '../repositories/ICategoriesRepository';
 
 type IRequest = {
   name: string;
@@ -7,7 +7,7 @@ type IRequest = {
 };
 
 class CreateCategoryService {
-  constructor(private categoryRepository: CategoryRepository) {
+  constructor(private categoryRepository: ICategoriesRepository) {
     this.categoryRepository = categoryRepository;
   }
 

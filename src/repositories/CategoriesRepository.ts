@@ -1,16 +1,10 @@
 import { Category } from '../model/Category';
+import {
+  ICategoriesRepository,
+  CreateCategoryDTO,
+} from './ICategoriesRepository';
 
-type CreateCategoryDTO = {
-  name: string;
-  description: string;
-};
-interface ICategoryRepository {
-  create({ name, description }: CreateCategoryDTO): Category;
-  list(): Category[];
-  findByName(name: string): Category | undefined;
-}
-
-class CategoryRepository implements ICategoryRepository {
+class CategoryRepository implements ICategoriesRepository {
   private catergories: Category[] = [];
 
   constructor() {
