@@ -1,15 +1,18 @@
 import { Category } from '../model/Category';
 import { CategoryRepository } from '../repositories/CategoriesRepository';
 
-interface IRequest {
+type IRequest = {
   name: string;
   description: string;
-}
+};
 
 class CreateCategoryService {
-  execute({ name, description }: IRequest) {
-    const categoryRepository = new CategoryRepository();
-    let category = categoryRepository.findByName(name);
+  constructor(private categoryRepository: CategoryRepository) {
+    this.categoryRepository = categoryRepository;
+  }
+
+  execute({ name, description }: IRequest): Category {
+    let category = this.categoryRepository.findByName(name);
     if (!category) {
       category = new Category();
       Object.assign(category, {
@@ -17,7 +20,7 @@ class CreateCategoryService {
         description,
       });
 
-      categoryRepository.create(category);
+      this.categoryRepository.create(category);
     }
     return category;
   }
