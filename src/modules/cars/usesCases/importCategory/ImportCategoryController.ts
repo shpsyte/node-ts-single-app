@@ -8,6 +8,10 @@ class ImportCategoryController {
   handle(request: Request, response: Response) {
     const { file } = request;
 
+    if (!file) {
+      return response.status(400).json({ error: 'File not found' });
+    }
+
     this.importCategoruUseCase.execute(file);
 
     return response.send({

@@ -29,17 +29,14 @@ class CategoryRepository implements ICategoriesRepository {
   }
 
   create({ name, description }: CreateCategoryDTO): Category {
-    // check if category already exists
-    let category = this.findByName(name);
-    if (!category) {
-      category = new Category();
-      Object.assign(category, {
-        name,
-        description,
-      });
+    const category = new Category();
+    Object.assign(category, {
+      name,
+      description,
+    });
 
-      this.catergories.push(category);
-    }
+    this.catergories.push(category);
+
     return category;
   }
 }
