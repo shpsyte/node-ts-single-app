@@ -30,3 +30,28 @@ Content-Type: application/json
 ### List all specficitaion
 GET {{ baseUrl }}/specification
 Content-Type: application/json
+
+#### HTTP POST localhost:3333/categories/import file@~/Downloads/file.csv -f
+
+POST  {{ baseUrl }}/categories/import
+Content-Type: multipart/form-data; boundary=9bad7eb45a38487da9bd74824cf46dcc
+Host: localhost:3333
+User-Agent: HTTPie/3.2.1
+
+--9bad7eb45a38487da9bd74824cf46dcc
+Content-Disposition: form-data; name="file"; filename="file.csv"
+Content-Type: text/csv
+
+SUV,Utilitário esportivo
+Sedan,Automóvel de três volumes
+Hatch,Carro curto
+
+--9bad7eb45a38487da9bd74824cf46dcc--
+
+{
+  "file": "@~/Downloads/file.csv"
+}
+  
+ 
+
+
