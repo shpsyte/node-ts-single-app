@@ -1,8 +1,12 @@
 {
   "type": "postgres",
   "port": 5432,
-  "host": "database_ignite",
+  "host": "localhost",
   "username": "postgres",
   "password": "postgres",
-  "database": "rentex"
+  "database": "rentex",
+  "migrations": ["./src/database/migrations/*.ts"],
+  "cli": {
+    "migrationsDir": "./src/database/migrations"
+  }
 }

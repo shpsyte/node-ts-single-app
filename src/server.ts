@@ -12,6 +12,6 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
 app.use(router);
 
-app.listen(process.env.port || 3333, () =>
-  console.log(`🦊 Server is running =>  http://localhost:3333/api-docs`),
+app.listen(process.env.PORT || 3333, () =>
+  console.log(`🦊 Server is running: http://localhost:3333/api-docs`),
 );
