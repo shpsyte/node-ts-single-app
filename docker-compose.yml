@@ -1,21 +1,22 @@
 # 
-version: '2.13'
+version: '3.7'
 
 services:
-  db:
+  database_ignite:
     image: postgres
-    container_name: rentex_db
+    container_name: database_ignite
     restart: always
     ports:
-      - "5432:5432"
+      - 5432:5432
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: rentex
     volumes:
       - pgdata:/data/postgres
-    network_mode: host
   app:
+    depends_on:
+      - database_ignite
     build: .
     container_name: rentex
     restart: always
@@ -23,8 +24,6 @@ services:
       - "3333:3333"
     volumes:
       - .:/usr/app
-    network_mode: host
-
 volumes:
   pgdata: 
     driver: local

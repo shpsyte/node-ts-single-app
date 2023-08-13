@@ -1,7 +1,7 @@
 {
   "type": "postgres",
-  "host": "localhost",
   "port": 5432,
+  "host": "database_ignite",
   "username": "postgres",
   "password": "postgres",
   "database": "rentex"
