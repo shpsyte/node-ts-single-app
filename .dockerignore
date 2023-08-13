@@ -1,3 +1,15 @@
+**/tmp
+**/node_modules
+**/bower_components
+**/dist
+**/build
+**/coverage
+**/.git
+**/.hg
+**/.svn
+**/.vscode
 node_modules
 .git
 .vscode
+
+

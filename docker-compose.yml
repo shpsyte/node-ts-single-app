@@ -14,3 +14,7 @@ services:
 
 # seee the log 
 # docker logs -f rentex
+
+# enter in the container
+# docker exec -it rentex sh
+# docker exec -it rentex /bin/bash
