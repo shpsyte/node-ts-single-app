@@ -13,6 +13,7 @@ class CreateCategoryUseCase {
 
   execute({ name, description }: IRequest): Category {
     let category = this.categoryRepository.findByName(name);
+    console.log(' Category', category);
     if (!category) {
       category = new Category();
       Object.assign(category, {
